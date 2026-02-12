@@ -1,1 +1,93 @@
-
+{
+  "dns":{
+    "servers":[
+      {"tag":"ali-udp","type":"udp","server":"223.5.5.5"},
+      {"tag":"ali-DoH","type":"https","server":"dns.alidns.com","domain_resolver":"ali-udp"},
+      {"tag":"google-DoH","type":"https","server":"8.8.8.8","detour":"🚀 默认代理"},
+      {"tag":"fakeip","type":"fakeip","inet4_range":"198.18.0.0/15","inet6_range":"fc00::/18"}
+    ],
+    "rules":[
+      {"clash_mode":"direct","server":"ali-udp"},
+      {"clash_mode":"global","server":"fakeip"},
+      {"query_type":"HTTPS","action":"reject"},
+      {"rule_set":"geosite-fakeipfilter","server":"ali-udp"},
+      {"rule_set":"geosite-cn","server":"ali-udp"},
+      {"query_type":["A","AAAA"],"server":"fakeip"}
+    ],
+    "final":"google-DoH",
+    "client_subnet":"119.29.29.0/24",
+    "strategy":"prefer_ipv4",
+    "independent_cache":true,
+    "reverse_mapping":true
+  },
+  "outbounds":[
+    {"tag":"🚀 默认代理","type":"selector","outbounds":["🇭🇰 香港自动","🇼🇸 台湾自动","🇯🇵 日本自动","🇸🇬 狮城自动","🇰🇷 韩国自动","🇺🇸 美国自动","🛩️ ENET自动","🛩️ BigME自动","🧊 冷门节点","☝️ 手选丨更新"]},
+    {"tag":"🧠 AI","type":"selector","outbounds":["🚀 默认代理","🇭🇰 香港自动","🇼🇸 台湾自动","🇯🇵 日本自动","🇸🇬 狮城自动","🇰🇷 韩国自动","🇺🇸 美国自动","🛩️ ENET自动","🛩️ BigME自动","☝️ 手选丨更新"]},
+    {"tag":"📹 YouTube","type":"selector","outbounds":["🚀 默认代理","🇭🇰 香港自动","🇼🇸 台湾自动","🇯🇵 日本自动","🇸🇬 狮城自动","🇰🇷 韩国自动","🇺🇸 美国自动","🛩️ ENET自动","🛩️ BigME自动","☝️ 手选丨更新"]},
+    {"tag":"🍀 Google","type":"selector","outbounds":["🚀 默认代理","🇭🇰 香港自动","🇼🇸 台湾自动","🇯🇵 日本自动","🇸🇬 狮城自动","🇰🇷 韩国自动","🇺🇸 美国自动","🛩️ ENET自动","🛩️ BigME自动","☝️ 手选丨更新"]},
+    {"tag":"👨‍💻 Github","type":"selector","outbounds":["🚀 默认代理","🇭🇰 香港自动","🇼🇸 台湾自动","🇯🇵 日本自动","🇸🇬 狮城自动","🇰🇷 韩国自动","🇺🇸 美国自动","🛩️ ENET自动","🛩️ BigME自动","☝️ 手选丨更新"]},
+    {"tag":"📲 Telegram","type":"selector","outbounds":["🚀 默认代理","🇭🇰 香港自动","🇼🇸 台湾自动","🇯🇵 日本自动","🇸🇬 狮城自动","🇰🇷 韩国自动","🇺🇸 美国自动","🛩️ ENET自动","🛩️ BigME自动","☝️ 手选丨更新"]},
+    {"tag":"🪟 Microsoft","type":"selector","outbounds":["🚀 默认代理","🇭🇰 香港自动","🇼🇸 台湾自动","🇯🇵 日本自动","🇸🇬 狮城自动","🇰🇷 韩国自动","🇺🇸 美国自动","🛩️ ENET自动","🛩️ BigME自动","☝️ 手选丨更新"]},
+    {"tag":"🐠 漏网之鱼","type":"selector","outbounds":["🚀 默认代理","🎯 国内直连"]},
+    {"tag":"🇭🇰 香港自动","type":"urltest","outbounds":null,"fallback":{"enabled":true,"max_delay":"200ms"},"interval":"10m","idle_timeout":"30m","use_all_providers":true,"include":"(?i)(🇭🇰|港|HK|HKG|Hong)"},
+    {"tag":"🇼🇸 台湾自动","type":"urltest","outbounds":null,"fallback":{"enabled":true,"max_delay":"200ms"},"interval":"10m","idle_timeout":"30m","use_all_providers":true,"include":"(?i)🇼🇸|台|🇹🇼|TW|tai|TPE|TSA|KHH"},
+    {"tag":"🇯🇵 日本自动","type":"urltest","outbounds":null,"fallback":{"enabled":true,"max_delay":"200ms"},"interval":"10m","idle_timeout":"30m","use_all_providers":true,"include":"(?i)🇯🇵|日|JP|Japan|NRT|HND|KIX|CTS|FUK"},
+    {"tag":"🇸🇬 狮城自动","type":"urltest","outbounds":null,"fallback":{"enabled":true,"max_delay":"200ms"},"interval":"10m","idle_timeout":"30m","use_all_providers":true,"include":"(?i)🇸🇬|坡|SG|Sing|SIN|XSP"},
+    {"tag":"🇰🇷 韩国自动","type":"urltest","outbounds":null,"fallback":{"enabled":true,"max_delay":"200ms"},"interval":"10m","idle_timeout":"30m","use_all_providers":true,"include":"(?i)🇰🇷|韩|韓|首尔|南朝鲜|KR|KOR|Korea|South"},
+    {"tag":"🇺🇸 美国自动","type":"urltest","outbounds":null,"fallback":{"enabled":true,"max_delay":"200ms"},"interval":"10m","idle_timeout":"30m","use_all_providers":true,"include":"(?i)(🇺🇸|美|US|USA|JFK|LAX|ORD|ATL|DFW|SFO|MIA|SEA|IAD)"},
+    {"tag":"🇪🇺 欧洲自动","type":"urltest","outbounds":null,"fallback":{"enabled":true,"max_delay":"200ms"},"interval":"10m","idle_timeout":"30m","use_all_providers":true,"include":"(?i)(🇧🇪|🇨🇿|🇩🇰|🇫🇮|🇫🇷|🇩🇪|🇮🇪|🇮🇹|🇱🇹|🇱🇺|🇳🇱|🇵🇱|🇸🇪|🇬🇧|奥|比|保|克罗地亚|塞|捷|丹|爱沙|芬|法|德|希|匈|爱尔|意|拉|立|卢|马其它|荷|波|葡|罗|斯洛伐|斯洛文|西|瑞|英|CDG|FRA|AMS|MAD|BCN|FCO|MUC|BRU)"},
+    {"tag":"🧊 冷门节点","type":"selector","outbounds":null,"use_all_providers":true,"exclude":"(?i)(🇨🇳|🇭🇰|🇼🇸|🇹🇼|🇸🇬|🇯🇵|🇰🇷|🇺🇸|🇬🇧|🇦🇹|🇧🇪|🇨🇿|🇩🇰|🇫🇮|🇫🇷|🇩🇪|🇮🇪|🇮🇹|🇱🇹|🇱🇺|🇳🇱|🇵🇱|🇸🇪|DIRECT|直接连接|美|港|坡|台|新|日|韩|奥|比|保|克罗地亚|塞|捷|丹|爱沙|芬|法|德|希|匈|爱尔|意|拉|立|卢|马其它|荷|波|葡|罗|斯洛伐|斯洛文|西|瑞|英|HK|TW|SG|JP|KR|US|GB|CDG|FRA|AMS|MAD|BCN|FCO|MUC|BRU|HKG|TPE|TSA|KHH|SIN|XSP|NRT|HND|KIX|CTS|FUK|JFK|LAX|ORD|ATL|DFW|SFO|MIA|SEA|IAD|LHR|LGW)"},
+    {"tag":"🛩️ ENET自动","type":"urltest","outbounds":null,"fallback":{"enabled":true,"max_delay":"200ms"},"interval":"10m","idle_timeout":"30m","use_all_providers":true,"include":"(?i)ENET"},
+    {"tag":"🛩️ BigME自动","type":"urltest","outbounds":null,"fallback":{"enabled":true,"max_delay":"200ms"},"interval":"10m","idle_timeout":"30m","use_all_providers":true,"include":"(?i)Bigme"},
+    {"tag":"☝️ 手选丨更新","type":"selector","outbounds":null,"use_all_providers":true,"exclude":"(?i)(网站|流量|地址|剩余|过期|免费|时间|有效|Traffic|ExpireDate|GB|Expire Date)","outbounds":["🎯 国内直连"]},
+    {"tag":"GLOBAL","type":"selector","outbounds":["🚀 默认代理","🇭🇰 香港自动","🇼🇸 台湾自动","🇯🇵 日本自动","🇸🇬 狮城自动","🇰🇷 韩国自动","🇺🇸 美国自动","☝️ 手选丨更新","🎯 国内直连"]},
+    {"tag":"🎯 国内直连","type":"direct"}
+  ],
+  "route":{
+    "auto_detect_interface": true,
+    "rules":[
+      {"action":"sniff","sniffer":["http","tls","quic","dns"]},
+      {"protocol":"dns","action":"hijack-dns"},
+      {"ip_is_private":true,"outbound":"🎯 国内直连"},
+      {"clash_mode":"direct","outbound":"🎯 国内直连"},
+      {"clash_mode":"global","outbound":"GLOBAL"},
+      {"rule_set":"geosite-ai","outbound":"🧠 AI"},
+      {"rule_set":"geosite-youtube","outbound":"📹 YouTube"},
+      {"rule_set":"geosite-google","outbound":"🍀 Google"},
+      {"rule_set":"geosite-github","outbound":"👨‍💻 Github"},
+      {"rule_set":"geosite-microsoft","outbound":"🪟 Microsoft"},
+      {"rule_set":"geosite-telegram","outbound":"📲 Telegram"},
+      {"rule_set":"geosite-!cn","outbound":"🚀 默认代理"},
+      {"rule_set":"geosite-cn","outbound":"🎯 国内直连"},
+      {"action":"resolve","match_only":true},
+      {"rule_set":"geoip-google","outbound":"🍀 Google"},
+      {"rule_set":"geoip-telegram","outbound":"📲 Telegram"},
+      {"rule_set":"geoip-cn","outbound":"🎯 国内直连"}
+    ],
+    "final":"🐠 漏网之鱼",
+    "default_domain_resolver":{"server":"ali-DoH"},
+    "rule_set":[
+      {"tag":"geosite-fakeipfilter","type":"remote","format":"source","update_interval":"24h","url":"https://raw.githubusercontent.com/qichiyuhub/rule/main/fakeipfilter.json","download_detour":"☝️ 手选丨更新"},
+      {"tag":"geosite-ai","type":"remote","format":"binary","update_interval":"24h","url":"https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/category-ai-!cn.srs","download_detour":"☝️ 手选丨更新"},
+      {"tag":"geosite-youtube","type":"remote","format":"binary","update_interval":"24h","url":"https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/youtube.srs","download_detour":"☝️ 手选丨更新"},
+      {"tag":"geosite-google","type":"remote","format":"binary","update_interval":"24h","url":"https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/google.srs","download_detour":"☝️ 手选丨更新"},
+      {"tag":"geosite-github","type":"remote","format":"binary","update_interval":"24h","url":"https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/github.srs","download_detour":"☝️ 手选丨更新"},
+      {"tag":"geosite-microsoft","type":"remote","format":"binary","update_interval":"24h","url":"https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/microsoft.srs","download_detour":"☝️ 手选丨更新"},
+      {"tag":"geosite-telegram","type":"remote","format":"binary","update_interval":"24h","url":"https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/telegram.srs","download_detour":"☝️ 手选丨更新"},
+      {"tag":"geosite-!cn","type":"remote","format":"binary","update_interval":"24h","url":"https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/geolocation-!cn.srs","download_detour":"☝️ 手选丨更新"},
+      {"tag":"geosite-cn","type":"remote","format":"binary","update_interval":"24h","url":"https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/cn.srs","download_detour":"☝️ 手选丨更新"},
+      {"tag":"geoip-google","type":"remote","format":"binary","update_interval":"24h","url":"https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/google.srs","download_detour":"☝️ 手选丨更新"},
+      {"tag":"geoip-telegram","type":"remote","format":"binary","update_interval":"24h","url":"https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/telegram.srs","download_detour":"☝️ 手选丨更新"},
+      {"tag":"geoip-cn","type":"remote","format":"binary","update_interval":"24h","url":"https://github.com/qljsyph/ruleset-icon/raw/main/sing-box/geoip/China-ASN-combined-ip.srs","download_detour":"☝️ 手选丨更新"}
+    ]
+  },
+    "inbounds":[
+    {"tag":"dns-in","type":"direct","listen":"::","listen_port":1053},
+    {"tag":"tproxy-in","type":"tproxy","listen":"::","listen_port":9898}
+  ],
+  "experimental":{
+    "cache_file":{"enabled":true,"path":"/data/adb/box/cache.db","store_fakeip":true},
+    "clash_api":{"external_controller":"0.0.0.0:9090","external_ui":"ui","external_ui_download_url":"https://github.com/Zephyruso/zashboard/archive/gh-pages.zip","external_ui_download_detour":"☝️ 手选丨更新","secret":"","default_mode":"rule"}
+  },
+  "log":{"disabled":false,"level":"warn","timestamp":true}
+}
