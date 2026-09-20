@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain_suffix": [
+        "easy2023.com",
+        "easyint.net",
+        "cloudflare.com",
+        "dash.xns.one",
+        "ieee.org",
+        "gstatic.com",
+        "services.googleapis.cn"
+      ]
+    },
+    {
+      "domain_keyword": [
+        "skyboard",
+        "docker",
+        "vsean",
+        "morytyann",
+        "mihomo",
+        "github",
+        "githubusercontent",
+        "bigme",
+        "google"
+      ]
+    }
+  ]
+}
