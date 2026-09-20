@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain_keyword": [
+        "coreldraw",
+        "corel"
+      ]
+    },
+    {
+      "domain": [
+        "api.device.skysrt.com",
+        "compute-1.amazonaws.com"
+      ]
+    }
+  ]
+}
