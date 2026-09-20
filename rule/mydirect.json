@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain_keyword": [
+        "jmwl",
+        "jmlb",
+        "miui",
+        "wucai",
+        "jiandao",
+        "healthan",
+        "lslxgh",
+        "fnos",
+        "alibaba",
+        "aliyun",
+        "spaceship",
+        "daxiaamu",
+        "hongju",
+        "ikuai",
+        "fnnas"
+      ]
+    },
+    {
+      "domain_suffix": [
+        "msftncsi.com",
+        "msftconnecttest.com",
+        "caiyun.feixin",
+        "139.com",
+        "qisemiyun.com",
+        "linkease.com",
+        "easyenable.com",
+        "17nas.com",
+        "hk.pro.xns.one",
+        "hk1.pro.xns.one",
+        "hk.beta.xns.one",
+        "hk1.beta.xns.one",
+        "hk.kahkee.xns.one",
+        "hk.raito.xns.one",
+        "ipv6.ddnspod.com",
+        "v6.ip.zxinc.org",
+        "v6.myip.la",
+        "ai.alljm.com",
+        "board.zash.run.place",
+        "flatnas.lslxgh.top"
+      ]
+    },
+    {
+      "domain": [
+        "www.wacom.com",
+        "www.ylhr.net",
+        "b-gtc.getui.net",
+        "suooa.com",
+        "www.suooa.com",
+        "www.ylzpw.com",
+        "files.codelife.cc"
+      ]
+    }
+  ]
+}
