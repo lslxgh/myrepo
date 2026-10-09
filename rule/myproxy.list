@@ -4,7 +4,6 @@ DOMAIN-SUFFIX,easyint.net
 DOMAIN-SUFFIX,cloudflare.com
 DOMAIN-KEYWORD,skyboard
 DOMAIN-KEYWORD,docker
-DOMAIN-SUFFIX,xns.one
 DOMAIN-SUFFIX,ieee.org
 DOMAIN-KEYWORD,vsean
 DOMAIN-KEYWORD,morytyann
@@ -16,3 +15,4 @@ DOMAIN-KEYWORD,bigme
 DOMAIN-SUFFIX,gstatic.com
 DOMAIN-KEYWORD,google
 DOMAIN-SUFFIX,pandahead.net
+DOMAIN,dash.xns.one
