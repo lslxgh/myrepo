@@ -6,7 +6,6 @@
         "easy2023.com",
         "easyint.net",
         "cloudflare.com",
-        "dash.xns.one",
         "ieee.org",
         "gstatic.com",
         "services.googleapis.cn"
@@ -23,6 +22,11 @@
         "githubusercontent",
         "bigme",
         "google"
+      ]
+    },
+  {
+      "domain": [
+        "dash.xns.one"
       ]
     }
   ]
