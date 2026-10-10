@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 3,
   "rules": [
     {
       "domain_keyword": [
@@ -18,9 +18,7 @@
         "hongju",
         "ikuai",
         "fnnas"
-      ]
-    },
-    {
+      ],
       "domain_suffix": [
         "msftncsi.com",
         "msftconnecttest.com",
@@ -41,19 +39,18 @@
         "v6.myip.la",
         "ai.alljm.com",
         "board.zash.run.place",
-        "flatnas.lslxgh.top"
-      ]
-    },
-    {
+        "flatnas.lslxgh.top",
+        "gotohttp.com"
+      ],
       "domain": [
         "www.wacom.com",
         "www.ylhr.net",
-        "api.wucai.site",
         "b-gtc.getui.net",
         "suooa.com",
         "www.suooa.com",
         "www.ylzpw.com",
-        "files.codelife.cc"
+        "files.codelife.cc",
+        "api.wucai.site"
       ]
     }
   ]
