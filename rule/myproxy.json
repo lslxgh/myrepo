@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 3,
   "rules": [
     {
       "domain_suffix": [
@@ -8,10 +8,8 @@
         "cloudflare.com",
         "ieee.org",
         "gstatic.com",
-        "services.googleapis.cn"
-      ]
-    },
-    {
+        "pandahead.net"
+      ],
       "domain_keyword": [
         "skyboard",
         "docker",
@@ -22,10 +20,9 @@
         "githubusercontent",
         "bigme",
         "google"
-      ]
-    },
-  {
+      ],
       "domain": [
+        "services.googleapis.cn",
         "dash.xns.one"
       ]
     }
